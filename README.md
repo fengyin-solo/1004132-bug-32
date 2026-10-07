@@ -13,7 +13,7 @@
 .
 ├── frontend/                 Vue 3 + Vite + TypeScript 前端（唯一运行单元）
 │   ├── src/views/            每个业务模块一个页面
-│   ├── src/api/local-service.ts   本地数据服务：列表、筛选、动作流转、导出
+│   ├── src/api/local-service.ts   本地数据服务：列表、筛选、动作流转、导出、文件回填
 │   ├── src/data/             模块元数据 / 示例数据 / localStorage 持久化
 │   ├── src/stores/           会话与筛选状态
 │   └── vite.config.ts        dev server 配置（open: false，无 /api 代理）
@@ -68,4 +68,14 @@ npm run build
 - 字段、状态、动作与流转目标集中在 `frontend/src/data/modules.ts`；示例数据在
   `frontend/src/data/seed.ts`。
 - 状态流转只允许在 `local-service.ts` 里改，页面组件不做业务判断。
+- 牵引车调度的导出、详情、列表与文件回填走同一筛选条件；回填按牵引编号对齐，同号只更新不新增，
+  冲突时以现场确认值为准，已完结的历史记录按原口径保留，跨班组车辆不能改动；
+  牵引在途任务会同步在机位分配清单上推出待办，完结即销办。
 - 想回到初始数据：清掉浏览器里 `airport-ground-handling:entries` 这一项，或调用 `resetModule(模块)`。
+
+## 测试
+
+```bash
+cd frontend
+npm test
+```
