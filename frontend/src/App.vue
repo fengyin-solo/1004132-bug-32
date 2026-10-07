@@ -11,7 +11,7 @@
     <main class="app-main">
       <header class="app-head">
         <span class="head-desc">面向航班机位分配、廊桥调度、行李转运、货物装卸、航空加油、航食配餐与客舱清洁全流程的机场地面保障调度管理平台。</span>
-        <span class="head-user">当前值班：{{ store.operator }} · {{ store.shiftLabel }}</span>
+        <span class="head-user">当前值班：{{ store.operator }} · {{ store.shiftLabel }} · {{ store.crew }}</span>
       </header>
       <RouterView />
     </main>

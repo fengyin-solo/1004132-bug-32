@@ -12,6 +12,7 @@ const CabinClean = () => import('@/views/cabin_clean/index.vue')
 const Lavatory = () => import('@/views/lavatory/index.vue')
 const Deicing = () => import('@/views/deicing/index.vue')
 const Pushback = () => import('@/views/pushback/index.vue')
+const PushbackDetail = () => import('@/views/pushback/detail.vue')
 const CrewSchedule = () => import('@/views/crew_schedule/index.vue')
 const SpecialVehicle = () => import('@/views/special_vehicle/index.vue')
 const FlightOps = () => import('@/views/flight_ops/index.vue')
@@ -35,6 +36,7 @@ const router = createRouter({
     { path: '/lavatory', name: 'lavatory', component: Lavatory },
     { path: '/deicing', name: 'deicing', component: Deicing },
     { path: '/pushback', name: 'pushback', component: Pushback },
+    { path: '/pushback/detail', name: 'pushback-detail', component: PushbackDetail },
     { path: '/crew_schedule', name: 'crew_schedule', component: CrewSchedule },
     { path: '/special_vehicle', name: 'special_vehicle', component: SpecialVehicle },
     { path: '/flight_ops', name: 'flight_ops', component: FlightOps },
